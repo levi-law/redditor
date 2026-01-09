@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+*.js
+*.js.map
+*.d.ts
+!src/**/*.d.ts
+
+# IDE
+.idea/
+.vscode/
+*.sw*
+
+# macOS
+.DS_Store
+
+# Devvit
+.devvit/
+
+# Environment
+.env
+.env.local

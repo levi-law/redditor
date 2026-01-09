@@ -1,0 +1,13 @@
+# Devvit App Configuration
+# See: https://developers.reddit.com/docs/configuration
+
+name: redditor-agent
+version: 0.1.0
+
+# External domains the app can fetch from
+# These require Reddit approval during app review
+dependencies:
+  strict: false
+  domains:
+    - api.openai.com
+    - api.anthropic.com
