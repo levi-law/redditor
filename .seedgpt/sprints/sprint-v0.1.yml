@@ -1,0 +1,139 @@
+# Sprint v0.1 - Foundation
+# Last Updated: 2026-01-09
+
+sprint:
+  version: v0.1
+  name: Foundation
+  status: in_progress
+  start_date: 2026-01-09
+  end_date: 2026-01-16
+  progress: 10%
+
+goals:
+  - Project structure setup with Python package scaffolding
+  - Reddit API integration using PRAW
+  - Basic pipeline framework for agent execution
+
+methodology:
+  approach: Agile TDD
+  effort_multiplier: 2x (split between test and dev)
+  
+branches:
+  test: feature/v0.1/test
+  dev: feature/v0.1/dev
+  integration: feature/v0.1
+
+stories:
+
+  S-V01-001:
+    title: Project Scaffolding
+    priority: P0
+    status: in_progress
+    effort_points: 5
+    
+    description: |
+      Set up the complete Python project structure with all necessary
+      directories, configuration files, and CI/CD pipeline.
+    
+    test_requirements:
+      - Verify package can be imported
+      - Verify CLI entry point works
+      - Verify project structure matches tech-stack.yml
+      
+    dev_requirements:
+      - Create src/redditor package structure
+      - Set up requirements.txt with dependencies
+      - Create pyproject.toml for package configuration
+      - Implement basic CLI skeleton
+      - Create .gitignore
+      
+    acceptance_criteria:
+      - [ ] Python package installable via pip
+      - [ ] CLI command `redditor --help` functional
+      - [ ] All directories from tech-stack.yml present
+      - [ ] README.md with setup instructions
+
+  S-V01-002:
+    title: Reddit API Client
+    priority: P0
+    status: planned
+    effort_points: 8
+    
+    description: |
+      Implement a Reddit API wrapper using PRAW with OAuth2 authentication,
+      rate limiting, and basic CRUD operations.
+    
+    test_requirements:
+      - Black-box tests for authentication flow
+      - Tests for reading posts and comments
+      - Tests for rate limit handling
+      - Mocked Reddit API responses
+      
+    dev_requirements:
+      - Reddit client class with PRAW
+      - OAuth2 credential management
+      - Rate limiting decorator
+      - Post/comment fetching methods
+
+  S-V01-003:
+    title: Pipeline Framework Core
+    priority: P0
+    status: planned
+    effort_points: 8
+    
+    description: |
+      Core framework for defining and executing AI agent pipelines,
+      including configuration, scheduling, and logging.
+    
+    test_requirements:
+      - Pipeline registration and discovery
+      - Pipeline execution lifecycle
+      - Error handling and recovery
+      
+    dev_requirements:
+      - Base Pipeline abstract class
+      - YAML pipeline configuration loader
+      - Pipeline registry
+      - Basic execution loop
+
+timeline:
+  
+  day_1_2:
+    focus: S-V01-001 - Project Scaffolding
+    test_tasks:
+      - Set up test fixtures
+      - Write package import tests
+      - Write CLI tests
+    dev_tasks:
+      - Create package structure
+      - Set up dependencies
+      - Implement CLI skeleton
+      
+  day_3_4:
+    focus: S-V01-002 - Reddit API Client
+    test_tasks:
+      - Create Reddit API mocks
+      - Write authentication tests
+      - Write rate limit tests
+    dev_tasks:
+      - Implement RedditClient class
+      - Add credential management
+      - Implement post/comment fetching
+      
+  day_5_6:
+    focus: S-V01-003 - Pipeline Framework
+    test_tasks:
+      - Pipeline execution tests
+      - Configuration loading tests
+    dev_tasks:
+      - Implement Pipeline base class
+      - Create pipeline registry
+      - Add YAML configuration
+      
+  day_7:
+    focus: Integration & Merge
+    activities:
+      - Merge test and dev branches
+      - Run full test suite
+      - Fix any integration issues
+      - Merge to main

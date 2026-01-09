@@ -1,0 +1,85 @@
+# Redditor - Technology Stack
+# Last Updated: 2026-01-09
+
+core:
+  language: Python
+  version: "3.11+"
+  
+framework:
+  primary: asyncio
+  web: FastAPI
+  scheduler: APScheduler
+
+dependencies:
+  reddit_api:
+    library: PRAW (Python Reddit API Wrapper)
+    version: "7.7+"
+    purpose: Reddit API integration
+    
+  ai_agents:
+    openai:
+      library: openai
+      version: "1.0+"
+      purpose: GPT models for content generation
+    anthropic:
+      library: anthropic
+      version: "0.15+"
+      purpose: Claude models for analysis
+      
+  database:
+    primary: SQLite
+    orm: SQLAlchemy
+    async_driver: aiosqlite
+    purpose: Local pipeline state and logging
+    
+  configuration:
+    format: YAML
+    library: PyYAML
+    validation: Pydantic
+    
+  testing:
+    unit: pytest
+    async: pytest-asyncio
+    coverage: pytest-cov
+    mocking: pytest-mock
+    
+  logging:
+    library: structlog
+    format: JSON
+    
+  cli:
+    library: click
+    purpose: Command-line interface
+
+development:
+  package_manager: pip with requirements.txt
+  virtual_env: venv
+  linting: ruff
+  formatting: black
+  type_checking: mypy
+
+deployment:
+  containerization: Docker
+  orchestration: Docker Compose
+  ci_cd: GitHub Actions
+
+monitoring:
+  logging: structlog to file
+  health_checks: Built-in FastAPI endpoints
+
+project_structure:
+  src/redditor:
+    - __init__.py
+    - main.py           # Entry point
+    - config.py         # Configuration management
+    - cli.py            # CLI commands
+    - api/              # FastAPI routes
+    - agents/           # AI agent implementations
+    - pipelines/        # Pipeline definitions
+    - reddit/           # Reddit API wrapper
+    - database/         # Database models and operations
+    - utils/            # Shared utilities
+  tests:
+    - unit/
+    - integration/
+    - fixtures/

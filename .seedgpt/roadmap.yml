@@ -1,0 +1,124 @@
+# Redditor - Project Roadmap
+# Last Updated: 2026-01-09
+
+roadmap:
+  
+  sprint_v0.1:
+    name: Foundation
+    status: in_progress
+    start_date: 2026-01-09
+    end_date: 2026-01-16
+    progress: 10%
+    
+    goals:
+      - Project structure setup
+      - Reddit API integration
+      - Basic pipeline framework
+      
+    stories:
+      S-V01-001:
+        title: Project Scaffolding
+        priority: P0
+        status: in_progress
+        description: Set up project structure, dependencies, and CI/CD
+        acceptance_criteria:
+          - Python package structure created
+          - Dependencies defined in requirements.txt
+          - Basic CI/CD with GitHub Actions
+          - README with setup instructions
+          
+      S-V01-002:
+        title: Reddit API Client
+        priority: P0
+        status: planned
+        description: Implement Reddit API wrapper using PRAW
+        acceptance_criteria:
+          - OAuth2 authentication working
+          - Read posts and comments
+          - Handle rate limiting
+          - Unit tests passing
+          
+      S-V01-003:
+        title: Pipeline Framework Core
+        priority: P0
+        status: planned
+        description: Create base pipeline framework for agent tasks
+        acceptance_criteria:
+          - Pipeline base class defined
+          - YAML configuration support
+          - Execution scheduler integrated
+          - Logging infrastructure
+          
+  sprint_v0.2:
+    name: Core Agents
+    status: planned
+    start_date: 2026-01-16
+    end_date: 2026-01-23
+    progress: 0%
+    
+    goals:
+      - Content analysis agent
+      - Basic monitoring
+      
+    stories:
+      S-V02-001:
+        title: Content Analysis Agent
+        priority: P1
+        status: planned
+        description: AI agent for analyzing Reddit content
+        
+      S-V02-002:
+        title: Database Integration
+        priority: P1
+        status: planned
+        description: SQLite storage for pipeline state and logs
+        
+  sprint_v0.3:
+    name: Comment Generation
+    status: planned
+    start_date: 2026-01-23
+    end_date: 2026-01-30
+    progress: 0%
+    
+    goals:
+      - Comment generation agent
+      - Enhanced pipeline scheduling
+      
+    stories:
+      S-V03-001:
+        title: Comment Generation Agent
+        priority: P1
+        status: planned
+        description: AI agent for generating contextual Reddit comments
+        
+  sprint_v0.4:
+    name: Production Ready
+    status: planned
+    start_date: 2026-01-30
+    end_date: 2026-02-06
+    progress: 0%
+    
+    goals:
+      - Full monitoring and logging
+      - Docker deployment
+      - Documentation complete
+
+milestones:
+  
+  M1:
+    name: MVP
+    target_date: 2026-01-23
+    sprints: [sprint_v0.1, sprint_v0.2]
+    deliverables:
+      - Working Reddit API integration
+      - Content analysis agent operational
+      - Basic pipeline execution
+      
+  M2:
+    name: Full Feature Set
+    target_date: 2026-02-06
+    sprints: [sprint_v0.3, sprint_v0.4]
+    deliverables:
+      - Comment generation agent
+      - Production deployment
+      - Complete documentation
