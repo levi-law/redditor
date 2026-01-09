@@ -72,3 +72,4 @@ dmypy.json
 # Secrets
 secrets/
 credentials/
+secrets.env
