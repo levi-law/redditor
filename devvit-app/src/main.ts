@@ -5,7 +5,14 @@
  * Uses Devvit platform for real-time event handling.
  */
 
-import { Devvit } from '@devvit/public-api';
+import { Devvit, SettingScope } from '@devvit/public-api';
+
+// Enable required capabilities
+Devvit.configure({
+    redis: true,
+    http: true,
+    redditAPI: true,
+});
 
 // Import triggers
 import './triggers/post-submit.js';
@@ -22,7 +29,7 @@ Devvit.addSettings([
         label: 'OpenAI API Key',
         helpText: 'Your OpenAI API key for AI-powered responses',
         isSecret: true,
-        scope: 'installation',
+        scope: SettingScope.App,
     },
     {
         name: 'anthropic_key',
@@ -30,7 +37,7 @@ Devvit.addSettings([
         label: 'Anthropic API Key',
         helpText: 'Your Anthropic API key for Claude-powered responses',
         isSecret: true,
-        scope: 'installation',
+        scope: SettingScope.App,
     },
     {
         name: 'ai_provider',
@@ -42,7 +49,7 @@ Devvit.addSettings([
             { label: 'Anthropic (Claude)', value: 'anthropic' },
         ],
         defaultValue: ['openai'],
-        scope: 'installation',
+        scope: SettingScope.Installation,
     },
     {
         name: 'auto_reply_enabled',
@@ -50,7 +57,7 @@ Devvit.addSettings([
         label: 'Enable Auto-Reply',
         helpText: 'Automatically reply to posts/comments mentioning the bot',
         defaultValue: false,
-        scope: 'installation',
+        scope: SettingScope.Installation,
     },
     {
         name: 'trigger_keyword',
@@ -58,9 +65,10 @@ Devvit.addSettings([
         label: 'Trigger Keyword',
         helpText: 'Keyword that triggers the bot (e.g., "!ask" or "@redditor")',
         defaultValue: '!ask',
-        scope: 'installation',
+        scope: SettingScope.Installation,
     },
 ]);
 
 // Export Devvit configuration
 export default Devvit;
+
