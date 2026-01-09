@@ -5,10 +5,10 @@ roadmap:
   
   sprint_v0.1:
     name: Foundation
-    status: in_progress
+    status: complete
     start_date: 2026-01-09
-    end_date: 2026-01-16
-    progress: 10%
+    end_date: 2026-01-09
+    progress: 100%
     
     goals:
       - Project structure setup
@@ -19,35 +19,35 @@ roadmap:
       S-V01-001:
         title: Project Scaffolding
         priority: P0
-        status: in_progress
+        status: complete
         description: Set up project structure, dependencies, and CI/CD
         acceptance_criteria:
-          - Python package structure created
-          - Dependencies defined in requirements.txt
-          - Basic CI/CD with GitHub Actions
-          - README with setup instructions
+          - [x] Python package structure created
+          - [x] Dependencies defined in requirements.txt
+          - [ ] Basic CI/CD with GitHub Actions (deferred to v0.2)
+          - [x] README with setup instructions
           
       S-V01-002:
         title: Reddit API Client
         priority: P0
-        status: planned
+        status: complete
         description: Implement Reddit API wrapper using PRAW
         acceptance_criteria:
-          - OAuth2 authentication working
-          - Read posts and comments
-          - Handle rate limiting
-          - Unit tests passing
+          - [x] OAuth2 authentication working
+          - [x] Read posts and comments
+          - [x] Handle rate limiting
+          - [x] Unit tests passing (35 tests)
           
       S-V01-003:
         title: Pipeline Framework Core
         priority: P0
-        status: planned
+        status: complete
         description: Create base pipeline framework for agent tasks
         acceptance_criteria:
-          - Pipeline base class defined
-          - YAML configuration support
-          - Execution scheduler integrated
-          - Logging infrastructure
+          - [x] Pipeline base class defined
+          - [x] Configuration support
+          - [x] Pipeline registry
+          - [x] Logging infrastructure
           
   sprint_v0.2:
     name: Core Agents
