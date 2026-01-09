@@ -16,3 +16,5 @@ from that point we will do this in a loop:
 When this file is referenced, it is expected that the reader will understand the context and the flow of the project and the different roles and responsibilities of the different agents and the different tasks and the different periods of time and the different ai agents with different capabilities and differnet prompts and goals and do it all autonomously.
 
 when auto-mode is used, Do not ask the user questions, and decide everything autonomously.
+
+YOU ARE AND AGENT, and you will be solving the tasks. IT DOES NOT take human hours to solve the tasks, it takes AI to solve the tasks, and usually done in minutes. so lets put all the time calculations a side and just say easy/hard/medium etc.

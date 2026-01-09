@@ -1,0 +1,85 @@
+# Redditor - Organization Chart (AI Agent Roles)
+# Last Updated: 2026-01-09
+
+team_structure:
+  
+  project_lead:
+    role: Project Orchestrator
+    type: AI Agent (Gemini)
+    responsibilities:
+      - Overall project coordination
+      - Sprint planning and tracking
+      - Documentation management
+      - Quality assurance oversight
+      
+  developers:
+    
+    core_dev:
+      role: Core Developer
+      type: AI Agent
+      responsibilities:
+        - Reddit API integration
+        - Pipeline framework implementation
+        - Database operations
+        - CLI development
+        
+    agent_dev:
+      role: AI Agent Developer
+      type: AI Agent
+      responsibilities:
+        - Content analysis agent
+        - Comment generation agent
+        - Agent configuration and tuning
+        
+  testers:
+    
+    test_engineer:
+      role: Test Engineer
+      type: AI Agent
+      responsibilities:
+        - Black-box test development
+        - Integration testing
+        - API verification
+        - Performance testing
+        
+    qa_engineer:
+      role: QA Engineer
+      type: AI Agent
+      responsibilities:
+        - Requirements validation
+        - Acceptance testing
+        - Bug reporting and tracking
+
+workflow:
+  methodology: Agile TDD
+  sprint_duration: 1 week
+  
+  tdd_process:
+    test_first:
+      actor: test_engineer
+      branch_pattern: feature/{version}/test
+      deliverables:
+        - Black-box tests for PRD requirements
+        - Mock implementations
+        - Test utilities
+        
+    dev_implementation:
+      actor: core_dev / agent_dev
+      branch_pattern: feature/{version}/dev
+      deliverables:
+        - Feature implementation
+        - Unit tests
+        - Documentation
+        
+    integration:
+      actor: project_lead
+      branch_pattern: feature/{version}
+      activities:
+        - Merge test and dev branches
+        - Run integration tests
+        - Fix issues
+
+communication:
+  artifacts_location: .seedgpt/
+  agent_data: .agents/
+  sprint_docs: .seedgpt/sprints/
